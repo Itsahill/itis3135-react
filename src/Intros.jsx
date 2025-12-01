@@ -59,8 +59,16 @@ export default function Intros() {
       }
       return <span className="card-text">{trimmed}</span>;
     }
-    if (Array.isArray(val)) return <pre className="json-dump">{JSON.stringify(val, null, 2)}</pre>;
-    if (typeof val === "object") return <pre className="json-dump">{JSON.stringify(val, null, 2)}</pre>;
+    if (Array.isArray(val) || typeof val === "object") {
+      // stringify and insert <wbr> to allow breaks in very long tokens
+      const raw = JSON.stringify(val, null, 2);
+      // escape HTML
+      const esc = raw.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+      // insert word break opportunities after commas, colons, slashes and every 40 non-space chars
+      let withBreaks = esc.replace(/,/g, ",<wbr>").replace(/:/g, ":<wbr>").replace(/\//g, "/<wbr>");
+      withBreaks = withBreaks.replace(/([^\s]{40})/g, "$1<wbr>");
+      return <pre className="json-dump" dangerouslySetInnerHTML={{ __html: withBreaks }} />;
+    }
     return <span>{String(val)}</span>;
   }
 
