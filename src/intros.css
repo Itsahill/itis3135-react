@@ -1,0 +1,100 @@
+/* Scoped styles for the Intros page */
+.intros {
+	padding: 1rem 0;
+}
+
+.intros .card {
+	border: 1px solid #ddd;
+	padding: 1rem;
+	border-radius: 8px;
+	background: #fff;
+	color: #000;
+	/* aggressive wrapping for any long tokens inside cards */
+	overflow-wrap: anywhere;
+	word-break: break-all;
+}
+
+.intros .card header {
+	display: flex;
+	gap: 0.75rem;
+	align-items: center;
+}
+
+.intros .card img {
+	width: 96px;
+	height: 96px;
+	object-fit: cover;
+	border-radius: 8px;
+}
+
+.intros .initials {
+	width: 96px;
+	height: 96px;
+	background: #eee;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 8px;
+}
+
+.intros .card h3 {
+	margin-top: 0;
+}
+
+.intros .json-dump,
+.intros .card pre {
+	display: block;
+	box-sizing: border-box;
+	max-width: 100%;
+	white-space: pre-wrap; /* preserve line breaks but allow wrapping */
+	/* aggressive wrapping for very long tokens; keep a scroll fallback */
+	word-break: break-all;
+	overflow-wrap: anywhere;
+	margin: 0;
+	background: #fff;
+	color: #000;
+	padding: 12px;
+	/* if wrapping still fails, allow horizontal scroll inside the block only */
+	overflow-x: auto;
+}
+
+.intros a,
+.intros span {
+	/* allow breaking of long URLs and tokens inside links/text */
+	word-break: break-all;
+	overflow-wrap: anywhere;
+	display: inline-block;
+	max-width: 100%;
+}
+
+/* ensure children do not overflow the card width */
+.intros .card * {
+	max-width: 100%;
+}
+
+/* constrain images coming from JSON fields */
+.intros .student-image {
+	max-width: 100%;
+	height: auto;
+	border-radius: 6px;
+	display: block;
+	margin-top: 6px;
+}
+
+.intros .controls {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 8px;
+}
+
+.intros .controls .left {
+	display: flex;
+	gap: 8px;
+}
+
+/* make certain cards span the full grid width (single-student view) */
+.intros .card.card--full {
+  grid-column: 1 / -1;
+}
+

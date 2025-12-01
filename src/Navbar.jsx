@@ -4,7 +4,7 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <p>
-        <NavLink to="/">Home</NavLink> | <NavLink to="/about">About</NavLink> | <NavLink to="/contract">Contract</NavLink>
+        <NavLink to="/">Home</NavLink> | <NavLink to="/about">About</NavLink> | <NavLink to="/contract">Contract</NavLink> | <NavLink to="/intros">Intros</NavLink>
       </p>
     </nav>
   );

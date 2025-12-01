@@ -6,6 +6,7 @@ import App from './App.jsx'
 import Home from './Home.jsx'
 import About from './Intro.jsx'
 import Contract from './Contract.jsx'
+import Intros from './Intros.jsx'
 import Layout from './Layout.jsx'
 
 createRoot(document.getElementById('root')).render(
@@ -16,6 +17,8 @@ createRoot(document.getElementById('root')).render(
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="contract" element={<Contract />} />
+          <Route path="intros" element={<Intros />} />
+          <Route path="intros/:id" element={<Intros />} />
         </Route>
       </Routes>
     </BrowserRouter>
