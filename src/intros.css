@@ -98,3 +98,54 @@
   grid-column: 1 / -1;
 }
 
+/* toolbar */
+.intros .toolbar {
+	display: flex;
+	gap: 12px;
+	align-items: center;
+	flex-wrap: wrap;
+	margin-bottom: 12px;
+}
+
+.intros .toolbar .search {
+	display: flex;
+	gap: 8px;
+	align-items: center;
+}
+
+.intros .search-input {
+	padding: 6px 8px;
+	border: 1px solid #ccc;
+	border-radius: 6px;
+	min-width: 220px;
+}
+
+.intros .match-count {
+	font-size: 0.95rem;
+	color: #333;
+}
+
+.intros .filters {
+	display: flex;
+	gap: 10px;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.intros .filters label { 
+	display: flex; 
+	gap: 6px; 
+	align-items: center; 
+	font-size: 0.9rem; 
+}
+
+/* card preview tweaks */
+.intros .card header figure { margin: 0; }
+.intros .card header figcaption { font-size: 0.85rem; color: #555; }
+.intros .card ul { margin: 0; padding-left: 18px; }
+.intros .card ul li { margin-bottom: 6px; }
+
+/* make the full card layout wider and cleaner */
+.intros .card.card--full article { display: block; }
+
+
